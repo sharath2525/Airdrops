@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airdrops</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Airdrops</h1>
+        <nav class="nav nav-pills nav-justified mb-4">
+            <a class="nav-item nav-link active" href="#" onclick="showSection('latest')"><i class="fas fa-fire"></i> Latest Airdrops</a>
+            <a class="nav-item nav-link" href="#" onclick="showSection('hot')"><i class="fas fa-star"></i> Hot Airdrops</a>
+            <a class="nav-item nav-link" href="#" onclick="showSection('daily')"><i class="fas fa-calendar-day"></i> Daily Airdrops</a>
+        </nav>
+        <div id="latest" class="row">
+            <!-- Latest airdrop items will be added here dynamically -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="airdrop.html?airdrop=Example%20Airdrop%201">Example Airdrop 1</a></h5>
+                        <p class="card-text">Details about Example Airdrop 1.</p>
+                        <a href="airdrop.html?airdrop=Example%20Airdrop%201" class="btn btn-primary"><i class="fas fa-info-circle"></i> More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more latest airdrops here -->
+        </div>
+        <div id="hot" class="row" style="display: none;">
+            <!-- Hot airdrop items will be added here dynamically -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="airdrop.html?airdrop=Example%20Airdrop%201">Example Airdrop 1</a></h5>
+                        <p class="card-text">Details about Example Airdrop 1.</p>
+                        <a href="airdrop.html?airdrop=Example%20Airdrop%201" class="btn btn-primary"><i class="fas fa-info-circle"></i> More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more hot airdrops here -->
+        </div>
+        <div id="daily" class="row" style="display: none;">
+            <!-- Daily airdrop items will be added here dynamically -->
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <div class="card-body">
+                        <h5 class="card-title"><a href="airdrop.html?airdrop=Example%20Daily%20Airdrop%201">Example Daily Airdrop 1</a></h5>
+                        <p class="card-text">Details about Example Daily Airdrop 1.</p>
+                        <a href="airdrop.html?airdrop=Example%20Daily%20Airdrop%201" class="btn btn-primary"><i class="fas fa-info-circle"></i> More Info</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more daily airdrops here -->
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            document.getElementById('latest').style.display = section === 'latest' ? 'flex' : 'none';
+            document.getElementById('hot').style.display = section === 'hot' ? 'flex' : 'none';
+            document.getElementById('daily').style.display = section === 'daily' ? 'flex' : 'none';
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`.nav-link[onclick="showSection('${section}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

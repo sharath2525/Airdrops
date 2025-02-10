@@ -1,0 +1,60 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    color: #343a40;
+    font-weight: bold;
+}
+
+.nav-pills .nav-link {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #007bff;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-title a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.card-title a:hover {
+    text-decoration: underline;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-group label {
+    font-weight: bold;
+    color: #343a40;
+}

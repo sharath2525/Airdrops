@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airdrop Details</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4" id="airdropTitle">Airdrop Details</h1>
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="airdropDetails"><i class="fas fa-info-circle"></i> Details:</label>
+                    <textarea class="form-control" id="airdropDetails" rows="4"></textarea>
+                </div>
+                <button class="btn btn-primary" onclick="saveDetails()"><i class="fas fa-save"></i> Save</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const airdrop = urlParams.get('airdrop');
+            document.getElementById('airdropTitle').textContent = airdrop;
+        });
+
+        function saveDetails() {
+            const details = document.getElementById('airdropDetails').value;
+            alert('Details saved: ' + details);
+        }
+    </script>
+</body>
+</html>
